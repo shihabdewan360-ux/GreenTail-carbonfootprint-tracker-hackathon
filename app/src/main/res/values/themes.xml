@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Light Theme -->
+    <style name="Theme.Carbonfootprint" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Light Primary Color -->
+        <item name="colorPrimary">@color/colorPrimary1</item> <!-- Green -->
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item> <!-- Dark Green -->
+        <item name="colorOnPrimary">@color/black</item> <!-- Black Text on Green --> <!-- Change white to black -->
+
+        <!-- Secondary Brand Color (Teal) -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <!-- Status Bar Color -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!-- Background Color -->
+        <item name="android:background">@color/white</item> <!-- Light background for the app -->
+    </style>
+</resources>

@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F6FD">
+
+    <!-- Header Section (Unchanged) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/serveyheaderbackground"
+        android:padding="0dp">
+
+        <!-- Logo and Tabs Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical">
+
+            <!-- Logo -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:layout_gravity="start"
+                android:background="@android:color/transparent"
+                android:src="@drawable/serveyfox"
+                android:layout_marginEnd="0dp"/>
+
+            <!-- Tabs Container -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:paddingTop="30dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical">
+
+                <!-- White Boxes Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="8dp">
+
+                    <!-- Box 1 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="4dp">
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/rounded_white_box"/>
+
+                        <!-- Home label centered below box -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:layout_marginTop="6dp"
+                            android:text="Home"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+
+                    <!-- Box 2 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="4dp">
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/rounded_white_box"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="Travel"
+                            android:layout_marginTop="6dp"
+                            android:textAlignment="center"
+                            android:textColor="#FFF"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+
+                    <!-- Box 3 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="4dp">
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/foodservey_icon_bac"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="Food"
+                            android:layout_marginTop="6dp"
+                            android:textAlignment="center"
+                            android:textColor="#FFF"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+
+                    <!-- Box 4 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="4dp">
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/rounded_white_box"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="Others"
+                            android:layout_marginTop="6dp"
+                            android:textAlignment="center"
+                            android:textColor="#FFF"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/foodserveyimg"
+        android:background="@drawable/foodserveybg"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"/>
+
+    <!-- Food Questions Section -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <!-- Q1. How often do you eat meat in a week? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How often do you eat meat in a week?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/meatFrequencyGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Never -->
+                <RadioButton
+                    android:id="@+id/neverMeatOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Never"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 1–2 times -->
+                <RadioButton
+                    android:id="@+id/onceTwiceOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="1–2 times"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 3–4 times -->
+                <RadioButton
+                    android:id="@+id/threeFourOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="3–4 times"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 5+ times -->
+                <RadioButton
+                    android:id="@+id/fivePlusOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="5+ times"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q2. How many days a week do you eat vegetarian or vegan meals? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How many days a week do you eat vegetarian or vegan meals?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/vegetarianDaysGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- 0 days -->
+                <RadioButton
+                    android:id="@+id/zeroDaysOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="0 days"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 1–2 days -->
+                <RadioButton
+                    android:id="@+id/oneTwoDaysOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="1–2 days"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 3–5 days -->
+                <RadioButton
+                    android:id="@+id/threeFiveDaysOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="3–5 days"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 6–7 days -->
+                <RadioButton
+                    android:id="@+id/sixSevenDaysOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="6–7 days"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q3. Where do you usually buy your food? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Where do you usually buy your food?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/foodPurchaseGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Local markets -->
+                <RadioButton
+                    android:id="@+id/localMarketsOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Local markets"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Supermarkets -->
+                <RadioButton
+                    android:id="@+id/supermarketsOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Supermarkets"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Imported food stores -->
+                <RadioButton
+                    android:id="@+id/importedStoresOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Imported food stores"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Online grocery -->
+                <RadioButton
+                    android:id="@+id/onlineGroceryOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Online grocery"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q4. Do you consume seasonal and/or organic produce regularly? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Do you consume seasonal and/or organic produce regularly?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/organicProduceGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Always -->
+                <RadioButton
+                    android:id="@+id/alwaysOrganicOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Always"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Sometimes -->
+                <RadioButton
+                    android:id="@+id/sometimesOrganicOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Sometimes"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Rarely -->
+                <RadioButton
+                    android:id="@+id/rarelyOrganicOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Rarely"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Never -->
+                <RadioButton
+                    android:id="@+id/neverOrganicOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Never"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q5. How often do you eat out or order takeaway in a week? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How often do you eat out or order takeaway in a week?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/eatOutFrequencyGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Never -->
+                <RadioButton
+                    android:id="@+id/neverEatOutOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Never"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 1–2 times -->
+                <RadioButton
+                    android:id="@+id/onceTwiceEatOutOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="1–2 times"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 3–5 times -->
+                <RadioButton
+                    android:id="@+id/threeFiveEatOutOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="3–5 times"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- More than 5 times -->
+                <RadioButton
+                    android:id="@+id/moreThanFiveOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="More than 5 times"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q6. How much food do you throw away in a week? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How much food do you throw away in a week?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/foodWasteGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- None -->
+                <RadioButton
+                    android:id="@+id/noWasteOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="None"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- A little (1–2 small items) -->
+                <RadioButton
+                    android:id="@+id/littleWasteOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="A little (1–2 small items)"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Some (about 1 grocery bag) -->
+                <RadioButton
+                    android:id="@+id/someWasteOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Some (about 1 grocery bag)"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- A lot (multiple bags) -->
+                <RadioButton
+                    android:id="@+id/lotWasteOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="A lot (multiple bags)"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q7. Do you use reusable containers and water bottles? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Do you use reusable containers and water bottles?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/reusableGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Always -->
+                <RadioButton
+                    android:id="@+id/alwaysReusableOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Always"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Sometimes -->
+                <RadioButton
+                    android:id="@+id/sometimesReusableOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Sometimes"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Rarely -->
+                <RadioButton
+                    android:id="@+id/rarelyReusableOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Rarely"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Never -->
+                <RadioButton
+                    android:id="@+id/neverReusableOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Never"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="71dp"
+                android:text="Done"
+                android:fontFamily="@font/times_new_roman"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:background="@drawable/button_circle2"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Normal border color -->
+     <!-- Dark Green Border -->
+
+    <!-- Transparent background -->
+    <solid android:color="#1B3A4B"/>
+
+    <!-- Rounded corners -->
+    <corners android:radius="50dp"/>
+</shape>

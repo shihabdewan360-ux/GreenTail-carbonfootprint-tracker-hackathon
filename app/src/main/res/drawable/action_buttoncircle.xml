@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Pressed State: Apply a darker border color when the button is pressed -->
+    <item android:state_pressed="true" android:drawable="@drawable/button_border_pressed" />
+
+    <!-- Focused State: Apply a specific border color when the button is focused -->
+    <item android:state_focused="true" android:drawable="@drawable/button_border_focused" />
+
+    <!-- Default State: Apply the normal border color when the button is neither pressed nor focused -->
+    <item android:drawable="@drawable/action_buttonborder_normal" />
+
+</selector>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F6FD"
+    android:padding="0dp">
+
+    <!-- Top Section -->
+    <LinearLayout
+        android:id="@+id/top_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingBottom="80dp"
+        android:background="@drawable/headerbgactiondone"
+        android:alpha="0.85"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Title: Food & Drink -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#D9D3D3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="Travel"
+                    android:textColor="#494848"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Subtitle: Reduce food waste -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
+            android:background="@android:color/transparent"
+            android:text="Walk for short distances"
+            android:layout_marginTop="15dp"
+            android:textColor="#494848"
+            android:textSize="25sp"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Main Message -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppinslight"
+            android:text="“Ditch the ride, take a stride!”"
+            android:textColor="#494848"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <!-- Cat Image -->
+
+    <!-- Progress Card -->
+
+    <ImageView
+        android:id="@+id/cat_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="-75dp"
+        android:layout_marginLeft="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/catimg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_section" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/progress_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/cat_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="-40dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="0dp">
+
+            <!-- First FrameLayout -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/bg1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-5dp"
+                    android:text="400g"
+                    android:textSize="14sp"
+                    android:textColor="#666666"/>
+            </FrameLayout>
+
+            <!-- Second FrameLayout -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/bg2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-6dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="+5"
+                    android:textSize="14sp"
+                    android:textColor="#666666"/>
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- White Rounded Top Container -->
+    <LinearLayout
+        android:id="@+id/white_container"
+        android:layout_width="match_parent"
+        android:layout_marginTop="-40dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_top_bg"
+        app:layout_constraintTop_toBottomOf="@id/progress_card"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/habit_tracker23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/poppinslight"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:text="Action Tracked"
+            android:textColor="#1B4332"/>
+
+        <!-- Habit Tracker Text -->
+        <TextView
+            android:id="@+id/habit_tracker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppinslight"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:text="You’ve done a great thing for the planet and \ngathered some tailpoints in the process. Let’s \nkeep this on track"
+            android:textColor="#000000"/>
+
+
+        <!-- Footer Navigation -->
+
+        <Button
+            android:id="@+id/action_button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/button_circle"
+            android:fontFamily="@font/times_new_roman"
+            android:text="View my action"
+            android:textColor="@drawable/button_text_color"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/action_button2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/button_circle"
+            android:fontFamily="@font/times_new_roman"
+            android:text="see more action"
+            android:textColor="@drawable/button_text_color"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/fotter"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/footer_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1.3" />
+
+            <ImageView
+                android:id="@+id/home"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:background="@drawable/footer_icon_bg"
+                android:src="@drawable/fox" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1.2" />
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:background="@drawable/footer_icon_bg"
+                android:src="@drawable/search" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1.2" />
+
+            <ImageView
+                android:id="@+id/progress"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:background="@drawable/footer_icon_bg"
+                android:src="@drawable/progress" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1.2" />
+
+            <ImageView
+                android:id="@+id/connect"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:background="@drawable/footer_icon_bg"
+                android:src="@drawable/connect" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1.2" />
+
+            <ImageView
+                android:id="@+id/reward"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:background="@drawable/footer_icon_bg"
+                android:src="@drawable/reward" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1.3" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

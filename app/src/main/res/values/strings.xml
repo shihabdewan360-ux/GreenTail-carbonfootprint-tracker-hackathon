@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Carbonfootprint</string>
+    <string name="organisation_activity_label">Organisation Activity</string>
+    <string name="sign_up_activity_label">Sign Up</string>
+</resources>

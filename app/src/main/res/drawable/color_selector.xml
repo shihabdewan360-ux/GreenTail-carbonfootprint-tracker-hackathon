@@ -1,0 +1,10 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed State: Text color becomes white when pressed -->
+    <item android:state_pressed="true" android:textColor="@android:color/white" />
+
+    <!-- Focused State: Text color becomes white when focused -->
+    <item android:state_focused="true" android:textColor="@android:color/white" />
+
+    <!-- Default State: Text color remains dark green when normal -->
+    <item android:textColor="@color/colorPrimaryVariant" /> <!-- Dark green color from colors.xml -->
+</selector>

@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F6FD"
+    android:paddingTop="40dp">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:gravity="center_vertical"
+        android:background="@android:color/transparent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Spend your Tailpoints"
+            android:textColor="#1B4332"
+            android:background="@android:color/transparent"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/rewardroundedbox"
+            android:padding="5dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/staricon"
+                android:background="@android:color/transparent"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/taliPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="0"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@+id/footer"
+        android:layout_marginBottom="9dp"
+        android:background="@android:color/transparent"
+        android:scrollbars="none"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/transparent"
+            android:paddingBottom="40dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/btnWallet"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rewardroundedbox"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/wallet_icon"
+                        android:background="@android:color/transparent"
+                        android:layout_marginEnd="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RM 100"
+                        android:background="@android:color/transparent"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnRedeem"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rewardroundedbox"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/staricon"
+                        android:background="@android:color/transparent"
+                        android:layout_marginEnd="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Redeem pts"
+                        android:background="@android:color/transparent"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EcoShop"
+                android:textColor="#1B4332"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/shop_logo"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Support green startups &amp; sustainable brands"
+                android:textSize="10sp"
+                android:background="@android:color/transparent"
+                android:textColor="#555"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_banner"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ecoshop_banner"
+                        android:scaleType="centerCrop"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Discover eco-friendly products"
+                        android:textColor="#002200"
+                        android:layout_margin="15dp"
+                        android:background="@android:color/transparent"
+                        android:textSize="14sp"/>
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/arrow"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/footer_icon_bg"
+                        android:padding="8dp"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent"
+                android:text="Choose a cause"
+                android:textColor="#1B4332"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@android:color/transparent"
+                android:text="Charity"
+                android:textColor="#1B4332"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_background"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="Clean Water for Schools"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentEnd="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/arrow" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:background="@android:color/transparent"
+                        android:text="Support clean water access for kids in remote areas NGOs use donations to install filters and tanks."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/progress_bar_background">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="30"
+                                android:background="@drawable/progress_bar_fill" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="70"
+                                android:background="@android:color/transparent" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="8dp"
+                        android:background="@android:color/transparent"
+                        android:text="193,200 Tailpoints received"
+                        android:textColor="#000000"
+                        android:textSize="8sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_background"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reforest the Amazon"
+                            android:textColor="#000000"
+                            android:background="@android:color/transparent"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/arrow"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="Help plant trees in deforested areas of the Amazon. Partnered with One Tree Planted, each donation plants real trees."
+                        android:textColor="#000000"
+                        android:background="@android:color/transparent"
+                        android:textSize="10sp" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/progress_bar_background">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="60" android:background="@drawable/progress_bar_fill" />
+                            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="40" android:background="@android:color/transparent" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="end"
+                        android:text="234,200 Tailpoints received"
+                        android:textColor="#000000"
+                        android:background="@android:color/transparent"
+                        android:textSize="8sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_background"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rescue Ocean Plastic"
+                            android:textColor="#000000"
+                            android:background="@android:color/transparent"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/arrow"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="Support ocean cleanups in Southeast Asia. Funds go to removing plastic from beaches and rivers."
+                        android:textColor="#000000"
+                        android:background="@android:color/transparent"
+                        android:textSize="10sp" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/progress_bar_background">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="20" android:background="@drawable/progress_bar_fill" />
+                            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="80" android:background="@android:color/transparent" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="end"
+                        android:text="142,350 Tailpoints received"
+                        android:textColor="#000000"
+                        android:background="@android:color/transparent"
+                        android:textSize="8sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_background"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Power with Solar Light"
+                            android:textColor="#000000"
+                            android:background="@android:color/transparent"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/arrow"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="Give families solar lamps to reduce kerosene use. Helps reduce carbon AND improves safety at night."
+                        android:textColor="#000000"
+                        android:background="@android:color/transparent"
+                        android:textSize="10sp" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/progress_bar_background">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="45" android:background="@drawable/progress_bar_fill" />
+                            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="55" android:background="@android:color/transparent" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="end"
+                        android:text="210,720 Tailpoints received"
+                        android:textColor="#000000"
+                        android:background="@android:color/transparent"
+                        android:textSize="8sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal"
+                android:textColor="#1B4332"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spend your points on groceries"
+                android:textSize="12sp"
+                android:background="@android:color/transparent"
+                android:textColor="#555"
+                android:layout_marginBottom="15dp"/>
+
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="180dp" android:layout_marginBottom="12dp" app:cardCornerRadius="15dp" app:cardElevation="3dp"><ImageView android:id="@+id/imgNsk" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/grocery_nsk" android:scaleType="centerCrop" android:clipToOutline="true"/></androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="180dp" android:layout_marginBottom="12dp" app:cardCornerRadius="15dp" app:cardElevation="3dp"><ImageView android:id="@+id/imgGiant" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/grocery_giant" android:scaleType="centerCrop" android:clipToOutline="true"/></androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="180dp" android:layout_marginBottom="12dp" app:cardCornerRadius="15dp" app:cardElevation="3dp"><ImageView android:id="@+id/imgKkMart" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/grocery_99speedmart" android:scaleType="centerCrop" android:clipToOutline="true"/></androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="180dp" android:layout_marginBottom="12dp" app:cardCornerRadius="15dp" app:cardElevation="3dp"><ImageView android:id="@+id/img7Eleven" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/grocery_7eleven" android:scaleType="centerCrop" android:clipToOutline="true"/></androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="25dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical">
+                    <EditText
+                        android:id="@+id/editSuggestion"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Suggest ideas for reward"
+                        android:background="@android:color/transparent"
+                        android:textSize="14sp"
+                        android:paddingStart="10dp"/>
+                    <ImageView
+                        android:id="@+id/btnSendSuggestion"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/arrow"
+                        android:background="@drawable/footer_icon_bg"
+                        android:padding="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:background="@drawable/footer_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="7"
+        android:elevation="10dp"
+        android:layout_alignParentBottom="true">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.3" />
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:contentDescription="Home"
+            android:background="@drawable/footer_icon_bg"
+            android:padding="8dp"
+            android:src="@drawable/fox" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.2" />
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:contentDescription="Search"
+            android:background="@drawable/footer_icon_bg"
+            android:padding="8dp"
+            android:src="@drawable/search" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.2" />
+
+        <ImageView
+            android:id="@+id/progress"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:contentDescription="Progress"
+            android:background="@drawable/footer_icon_bg"
+            android:padding="8dp"
+            android:src="@drawable/progress" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.2" />
+
+        <ImageView
+            android:id="@+id/connect"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:contentDescription="Connect"
+            android:background="@drawable/footer_icon_bg"
+            android:padding="8dp"
+            android:src="@drawable/connect" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.2" />
+
+        <ImageView
+            android:id="@+id/reward"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:background="@drawable/footer_icon_bg"
+            android:padding="8dp"
+            android:contentDescription="Reward"
+            android:src="@drawable/reward" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.3" />
+    </LinearLayout>
+
+</RelativeLayout>

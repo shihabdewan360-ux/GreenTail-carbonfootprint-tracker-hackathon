@@ -1,0 +1,147 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F6FD"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- FrameLayout to stack shadow and the main image -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/shadowImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Shadow behind the GreenTail and Sage"
+                android:src="@drawable/mainshadow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/greenTailImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="GreenTail and Sage the Fox"
+                android:src="@drawable/main"
+                app:layout_constraintBottom_toTopOf="@+id/heading"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </FrameLayout>
+
+        <!-- Heading Text -->
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="32dp"
+            android:fontFamily="@font/times_new_roman"
+            android:lineSpacingExtra="5sp"
+            android:text="Together we can \nmake real change \nhappen"
+            android:textColor="#1B4332"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/greenTailImage" />
+
+        <!-- Description Text -->
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/times_new_roman"
+            android:lineSpacingExtra="10sp"
+            android:text="GreenTail (and Sage the fox) are here to\n help you reduce your carbon footprint at\n home, work, and beyond.\n Sound good? Then let’s get started."
+            android:textColor="#2E5937"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/joinButtonOrg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heading" />
+
+        <!-- Join with Organisation Button -->
+        <Button
+            android:id="@+id/joinButtonOrg"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/button_circle"
+            android:fontFamily="@font/times_new_roman"
+            android:letterSpacing="0"
+            android:paddingLeft="8dp"
+            android:paddingTop="6dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="6dp"
+            android:text="Join with Organisation"
+            android:textColor="@drawable/button_text_color"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:focusable="false"
+            android:backgroundTint="@android:color/transparent"
+        android:focusableInTouchMode="false"
+        app:layout_constraintBottom_toTopOf="@+id/joinButtonOwn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.56"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+
+        <!-- Join on my own Button -->
+        <Button
+            android:id="@+id/joinButtonOwn"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/button_circle"
+            android:fontFamily="@font/times_new_roman"
+            android:letterSpacing="0"
+            android:paddingLeft="8dp"
+            android:paddingTop="6dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="6dp"
+            android:text="Join on my own"
+            android:textColor="@drawable/button_text_color"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:focusable="false"
+            android:backgroundTint="@android:color/transparent"
+            android:focusableInTouchMode="false"
+            app:layout_constraintBottom_toTopOf="@+id/joinButtonOwn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.56"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

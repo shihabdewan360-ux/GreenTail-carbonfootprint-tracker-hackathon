@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Solid color background (instead of stroke) -->
+    <solid android:color="#2E5937" /> <!-- Darker green color for the button background -->
+
+    <!-- Optional: Rounded corners -->
+    <corners android:radius="50dp" />
+</shape>

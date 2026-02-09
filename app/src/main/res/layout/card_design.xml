@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="20dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/cardTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Action Title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1B3A4B"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/cardQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="400g"
+                android:textColor="#666666"/>
+
+            <TextView
+                android:id="@+id/cardCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="1 "
+                android:textColor="#666666"/>
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/cardSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:max="4"
+            android:progress="1"
+            android:progressTint="#4CAF50"
+            android:thumbTint="#4CAF50"
+            android:enabled="false"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

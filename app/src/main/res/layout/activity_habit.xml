@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F6FD">
+
+    <!-- Top Section -->
+    <LinearLayout
+        android:id="@+id/headerSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:layout_marginTop="70dp"
+        android:padding="16dp"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Your actions and habits"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1B3A4B" />
+        </LinearLayout>
+
+        <!-- Profile + Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/group"
+                android:padding="8dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:background="@android:color/transparent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="Ready to track a new action?"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1B3A4B" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="Search all actions"
+                    android:textSize="14sp"
+                    android:textColor="#444" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Tabs -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:background="#D9FDDB"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btnMyActions"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="My actions"
+                android:textColor="@drawable/button_text_color"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnMyHabits"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/action_buttoncircle"
+                android:textColor="@drawable/button_text_color"
+                android:layout_weight="1"
+                android:text="My habits"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Scrollable Cards -->
+    <ScrollView
+        android:id="@+id/scrollArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:layout_above="@id/fotter"
+        android:layout_below="@id/headerSection"
+        android:paddingHorizontal="8dp">
+
+        <LinearLayout
+            android:id="@+id/cardContainer"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="100dp"/>
+    </ScrollView>
+
+    <!-- Floating Add Button -->
+    <ImageButton
+        android:id="@+id/addActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="90dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/plusicon"
+        android:contentDescription="Add Action"
+        android:elevation="4dp" />
+
+    <!-- Footer -->
+    <LinearLayout
+        android:id="@+id/fotter"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="7">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.3" />
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:contentDescription="Home"
+            android:gravity="center"
+            android:background="@drawable/footer_icon_bg"
+            android:src="@drawable/fox" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.2" />
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:contentDescription="Search"
+            android:gravity="center"
+            android:background="@drawable/footer_icon_bg"
+            android:src="@drawable/search" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.2" />
+
+        <ImageView
+            android:id="@+id/progress"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:contentDescription="Progress"
+            android:gravity="center"
+            android:background="@drawable/footer_icon_bg"
+            android:src="@drawable/progress" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.2" />
+
+        <ImageView
+            android:id="@+id/connect"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:contentDescription="Connect"
+            android:background="@drawable/footer_icon_bg"
+            android:src="@drawable/connect" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.2" />
+
+        <ImageView
+            android:id="@+id/reward"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:background="@drawable/footer_icon_bg"
+            android:contentDescription="Reward"
+            android:src="@drawable/reward" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.3" />
+    </LinearLayout>
+
+</RelativeLayout>

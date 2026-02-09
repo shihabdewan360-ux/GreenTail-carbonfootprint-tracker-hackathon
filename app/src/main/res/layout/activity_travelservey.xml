@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F6FD">
+
+    <!-- Header Section (Unchanged) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/serveyheaderbackground"
+        android:padding="0dp">
+
+        <!-- Logo and Tabs Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical">
+
+            <!-- Logo -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:layout_gravity="start"
+                android:background="@android:color/transparent"
+                android:src="@drawable/serveyfox"
+                android:layout_marginEnd="0dp"/>
+
+            <!-- Tabs Container -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:paddingTop="30dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical">
+
+                <!-- White Boxes Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="8dp">
+
+                    <!-- Box 1 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="4dp">
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/rounded_white_box"/>
+
+                        <!-- Home label centered below box -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:layout_marginTop="6dp"
+                            android:text="Home"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+
+                    <!-- Box 2 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="4dp">
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/travelservey_icon_bac"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="Travel"
+                            android:layout_marginTop="6dp"
+                            android:textAlignment="center"
+                            android:textColor="#FFF"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+
+                    <!-- Box 3 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="4dp">
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/rounded_white_box"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="Food"
+                            android:layout_marginTop="6dp"
+                            android:textAlignment="center"
+                            android:textColor="#FFF"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+
+                    <!-- Box 4 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="4dp">
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/rounded_white_box"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="Others"
+                            android:layout_marginTop="6dp"
+                            android:textAlignment="center"
+                            android:textColor="#FFF"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/travelimg"
+        android:background="@drawable/travelimgbac"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"/>
+
+    <!-- Travel Questions Section -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <!-- Q1. How many kilometers do you drive in a typical week? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How many kilometers do you drive in a typical week?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/distanceGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- I don't drive -->
+                <RadioButton
+                    android:id="@+id/noDriveOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="I don't drive"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 1–20 km -->
+                <RadioButton
+                    android:id="@+id/lowDistanceOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="1–20 km"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 21–50 km -->
+                <RadioButton
+                    android:id="@+id/mediumDistanceOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="21–50 km"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 51+ km -->
+                <RadioButton
+                    android:id="@+id/highDistanceOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="51+ km"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q2. What’s your main mode of daily transport? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What’s your main mode of daily transport?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/transportGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Walk -->
+                <RadioButton
+                    android:id="@+id/walkOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Walk"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Bicycle -->
+                <RadioButton
+                    android:id="@+id/bicycleOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Bicycle"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Public transport -->
+                <RadioButton
+                    android:id="@+id/publicTransportOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Public transport"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Motorcycle -->
+                <RadioButton
+                    android:id="@+id/motorcycleOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Motorcycle"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Car -->
+                <RadioButton
+                    android:id="@+id/carOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Car"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q3. What type of vehicle do you use most often? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What type of vehicle do you use most often?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/vehicleTypeGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Electric -->
+                <RadioButton
+                    android:id="@+id/electricOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Electric"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Hybrid -->
+                <RadioButton
+                    android:id="@+id/hybridOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Hybrid"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Petrol -->
+                <RadioButton
+                    android:id="@+id/petrolOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Petrol"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Diesel -->
+                <RadioButton
+                    android:id="@+id/dieselOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Diesel"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- I don’t own a vehicle -->
+                <RadioButton
+                    android:id="@+id/noVehicleOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="I don’t own a vehicle"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q4. How often do you take domestic or international flights in a year? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How often do you take domestic or international flights in a year?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/flightsGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- 0 -->
+                <RadioButton
+                    android:id="@+id/noFlightsOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="0"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 1–2 -->
+                <RadioButton
+                    android:id="@+id/fewFlightsOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="1–2"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 3–5 -->
+                <RadioButton
+                    android:id="@+id/moderateFlightsOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="3–5"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 6+ -->
+                <RadioButton
+                    android:id="@+id/manyFlightsOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="6+"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q5. Do you carpool or use shared transport regularly? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Do you carpool or use shared transport regularly?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/carpoolGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Always -->
+                <RadioButton
+                    android:id="@+id/alwaysCarpoolOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Always"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Sometimes -->
+                <RadioButton
+                    android:id="@+id/sometimesCarpoolOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Sometimes"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Rarely -->
+                <RadioButton
+                    android:id="@+id/rarelyCarpoolOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Rarely"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Never -->
+                <RadioButton
+                    android:id="@+id/neverCarpoolOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Never"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q6. How often do you use ride-hailing apps (e.g., Grab, Uber)? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How often do you use ride-hailing apps (e.g., Grab, Uber)?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/rideHailingGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Never -->
+                <RadioButton
+                    android:id="@+id/neverRideOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Never"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Occasionally -->
+                <RadioButton
+                    android:id="@+id/occasionallyOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Occasionally"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Weekly -->
+                <RadioButton
+                    android:id="@+id/weeklyOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Weekly"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Daily -->
+                <RadioButton
+                    android:id="@+id/dailyOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Daily"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q7. Do you plan routes to minimize fuel use or time? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Do you plan routes to minimize fuel use or time?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/routePlanningGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Yes -->
+                <RadioButton
+                    android:id="@+id/yesPlanOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Yes"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Sometimes -->
+                <RadioButton
+                    android:id="@+id/sometimesPlanOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Sometimes"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- No -->
+                <RadioButton
+                    android:id="@+id/noPlanOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="No"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="71dp"
+                android:text="Done"
+                android:fontFamily="@font/times_new_roman"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:background="@drawable/button_circle2"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

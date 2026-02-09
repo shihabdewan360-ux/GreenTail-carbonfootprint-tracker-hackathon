@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F6FD">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/serveyheaderbackground"
+        android:padding="0dp">
+
+        <!-- Logo and Tabs Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical">
+
+            <!-- Logo -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:layout_gravity="start"
+                android:background="@android:color/transparent"
+                android:src="@drawable/serveyfox"
+                android:layout_marginEnd="0dp"/>
+
+            <!-- Tabs Container -->
+            <!-- Tabs Container -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:paddingTop="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <!-- White Boxes Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:paddingBottom="8dp">
+
+                <!-- Box 1 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="4dp">
+
+                    <View
+                        android:layout_width="50dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/home_icon_bac"/>
+
+                    <!-- Home label centered below box -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="6dp"
+                        android:text="Home"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <!-- Box 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="4dp">
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_height="21dp"
+                        android:background="@drawable/rounded_white_box"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:text="Travel"
+                        android:layout_marginTop="6dp"
+                        android:textAlignment="center"
+                        android:textColor="#FFF"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <!-- Box 3 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="4dp">
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_height="21dp"
+                        android:background="@drawable/rounded_white_box"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:text="Food"
+                        android:layout_marginTop="6dp"
+                        android:textAlignment="center"
+                        android:textColor="#FFF"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <!-- Box 4 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="4dp">
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_height="21dp"
+                        android:background="@drawable/rounded_white_box"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:text="Others"
+                        android:layout_marginTop="6dp"
+                        android:textAlignment="center"
+                        android:textColor="#FFF"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/homeserveyimg"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"/>
+
+    <!-- Questions Section -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <!-- Q1. How many people live in your household? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How many people live in your household?"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Updated Slider Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@android:color/transparent"
+                android:padding="0dp"
+                android:layout_marginBottom="24dp">
+
+                <!-- Value display above the thumb -->
+                <TextView
+                    android:id="@+id/householdValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="1"
+                    android:textSize="18sp"
+                    android:textColor="#2E5937"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp">  <!-- Critical: Add padding to SeekBar container -->
+
+
+                    <SeekBar
+                        android:id="@+id/householdSeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@null"
+                        android:max="9"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/custom_seekbar_progress"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/custom_thumb" />
+                </FrameLayout>
+
+                <!-- Labels container -->
+
+
+            </LinearLayout>
+
+            <!-- Q2. How many bedrooms does your home have? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How many bedrooms does your home have?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/bedroomsGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Studio -->
+                <RadioButton
+                    android:id="@+id/studioOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Studio (no bedroom)"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 1 -->
+                <RadioButton
+                    android:id="@+id/oneBedroomOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="1"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 2 -->
+                <RadioButton
+                    android:id="@+id/twoBedroomsOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="2"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 3+ -->
+                <RadioButton
+                    android:id="@+id/threePlusBedroomsOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="3+"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q3. What is your primary heating/cooling system? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What is your primary heating/cooling system?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/heatingGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Gas boiler -->
+                <RadioButton
+                    android:id="@+id/gasBoilerOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Gas boiler"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Gas condenser -->
+                <RadioButton
+                    android:id="@+id/gasCondenserOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Gas condenser"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Oil -->
+                <RadioButton
+                    android:id="@+id/oilOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Oil"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Electricity -->
+                <RadioButton
+                    android:id="@+id/electricityOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Electricity"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Ground source heat pump -->
+                <RadioButton
+                    android:id="@+id/heatPumpOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Ground source heat pump"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q4. Is your electricity from renewable sources? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Is your electricity from renewable sources?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/renewableGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Yes -->
+                <RadioButton
+                    android:id="@+id/yesRenewableOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Yes"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- No -->
+                <RadioButton
+                    android:id="@+id/noRenewableOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="No"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Not sure -->
+                <RadioButton
+                    android:id="@+id/notSureRenewableOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Not sure"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q5. Do you switch off appliances/lights when not in use? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Do you switch off appliances/lights when not in use?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/appliancesGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Always -->
+                <RadioButton
+                    android:id="@+id/alwaysOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Always"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Most of the time -->
+                <RadioButton
+                    android:id="@+id/mostTimeOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Most of the time"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Rarely -->
+                <RadioButton
+                    android:id="@+id/rarelyOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Rarely"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Never -->
+                <RadioButton
+                    android:id="@+id/neverOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Never"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Q6. How often do you do laundry? -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How often do you do laundry?"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="#1B4332"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/laundryGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="32dp">
+
+                <!-- Less than 2 times per week -->
+                <RadioButton
+                    android:id="@+id/lessThan2Option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="Less than 2 times per week"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 3-4 times per week -->
+                <RadioButton
+                    android:id="@+id/threeToFourOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="3–4 times per week"
+                    android:textColor="@color/option_text_selector"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 5+ times per week -->
+                <RadioButton
+                    android:id="@+id/fivePlusOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/option_background_selector"
+                    android:button="@null"
+                    android:padding="20dp"
+                    android:text="5+ times per week"
+                    android:textColor="@color/option_text_selector"/>
+            </RadioGroup>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="71dp"
+                android:text="Done"
+                android:fontFamily="@font/times_new_roman"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:background="@drawable/button_circle2"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

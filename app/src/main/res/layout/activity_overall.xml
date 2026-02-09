@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F6FD"
+    android:padding="0dp">
+
+    <!-- 1. Title: Your Carbon Footprint -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Carbon Footprint"
+        android:textColor="#1B4332"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/poppinslight"/>
+
+    <!-- 2. Fox Image (Central) -->
+    <ImageView
+        android:id="@+id/foxImage"
+        android:layout_width="130dp"
+        android:layout_height="117dp"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/foxoverall" />
+
+    <!-- 3. Four Rounded Cards around Fox Image -->
+
+    <!-- Home Card -->
+    <RelativeLayout
+        android:id="@+id/homeContainer"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:layout_marginTop="90dp"
+        android:layout_marginRight="-58dp"
+        android:layout_toLeftOf="@id/foxImage"
+        android:background="@drawable/circle_home">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Home"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/homeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="0.0"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Travel Card -->
+
+    <!-- Food Card -->
+    <RelativeLayout
+        android:id="@+id/travelContainer"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="-60dp"
+        android:layout_marginTop="90dp"
+        android:layout_toRightOf="@id/foxImage"
+        android:background="@drawable/circle_travel"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Travel"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/travelValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppinslight"
+            android:text="0.0"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/foodContainer"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:layout_below="@id/foxImage"
+        android:layout_marginTop="-130dp"
+        android:layout_marginRight="0dp"
+        android:layout_toLeftOf="@id/foxImage"
+        android:background="@drawable/circle_food">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Food"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/foodValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppinslight"
+            android:text="0.0"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Others Card -->
+    <RelativeLayout
+        android:id="@+id/othersContainer"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:layout_below="@id/foxImage"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="-130dp"
+        android:layout_toRightOf="@id/foxImage"
+        android:background="@drawable/circle_others">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Others"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/othersValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppinslight"
+            android:text="0.0"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- 4. Overall Text -->
+    <TextView
+        android:id="@+id/overallText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Overall 0.0"
+        android:background="@android:color/transparent"
+        android:textColor="#1B4332"
+        android:textSize="20sp"
+        android:layout_below="@id/foxImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppinsmedium"/>
+
+    <!-- 5. Overall Value -->
+    <TextView
+        android:id="@+id/overallValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  0.0 tons of CO2e would melt an area \nof arctic sea ice the size of 0 billboards \n     The safe bar is 2 tons CO2e/year"
+        android:background="@android:color/transparent"
+        android:textColor="#1B4332"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:layout_below="@id/overallText"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/poppinslight"/>
+
+    <!-- 6. Bar Chart Container -->
+    <LinearLayout
+        android:id="@+id/barChartContainer"
+        android:layout_width="match_parent"
+        android:layout_height="468dp"
+        android:layout_above="@+id/updateButton"
+        android:layout_below="@id/overallValue"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="-4dp"
+        android:background="@drawable/bar_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppinsmedium"
+            android:gravity="center"
+            android:text="How you compare your footprint average"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Food Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Food"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@drawable/bg_progress_track"
+                android:padding="4dp">
+
+                <View
+                    android:id="@+id/foodProgressFill"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/foodprogressfill" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Home Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Home"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@drawable/bg_progress_track"
+                android:padding="4dp">
+
+                <View
+                    android:id="@+id/homeProgressFill"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/homeprogressfill" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Travel Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Travel"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@drawable/bg_progress_track"
+                android:padding="4dp">
+
+                <View
+                    android:id="@+id/travelProgressFill"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/travelprogressfill" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Others Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Others"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@drawable/bg_progress_track"
+                android:padding="4dp">
+
+                <View
+                    android:id="@+id/othersProgressFill"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/othersprogreefill" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 7. Update Survey Button -->
+    <TextView
+        android:id="@+id/updateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="62dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/poppinslight"
+        android:gravity="center"
+        android:text="Update survey answers"
+        android:textColor="#1B4332"
+        android:textSize="12sp" />
+</RelativeLayout>

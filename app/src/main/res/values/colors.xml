@@ -1,0 +1,34 @@
+<resources>
+    <!-- Light Mode Colors -->
+    <color name="colorPrimary1">#2E5937</color> <!-- Dark Green for Light Mode -->
+    <color name="colorPrimaryVariant">#1B4332</color> <!-- Darker Green -->
+    <color name="colorOnPrimary">#FFFFFF</color> <!-- White text on primary color -->
+
+    <color name="colorSecondary">#03DAC5</color> <!-- Teal color -->
+    <color name="colorSecondaryVariant">#018786</color> <!-- Darker Teal -->
+    <color name="colorOnSecondary">#000000</color> <!-- Black text on secondary color -->
+
+    <!-- Status bar color (Light Mode) -->
+    <color name="statusBarColor">#2E5937</color> <!-- Use a similar dark green for status bar in light mode -->
+
+    <!-- Night Mode Colors -->
+    <color name="colorPrimary1Night">#1B4332</color> <!-- Darker Green for Night Mode -->
+    <color name="colorPrimaryVariantNight">#0D2A1D</color> <!-- Even Darker Green -->
+    <color name="colorOnPrimaryNight">#FFFFFF</color> <!-- White text on primary color for Night Mode -->
+
+    <color name="colorSecondaryNight">#018786</color> <!-- Darker Teal for Night Mode -->
+    <color name="colorSecondaryVariantNight">#03DAC5</color> <!-- Lighter Teal for Night Mode -->
+    <color name="colorOnSecondaryNight">#000000</color> <!-- Black text on secondary color for Night Mode -->
+
+    <!-- Background and Text Colors for Night Mode -->
+    <color name="backgroundColorNight">#121212</color> <!-- Dark background for Night Mode -->
+    <color name="textColorNight">#FFFFFF</color> <!-- Light text color for Night Mode -->
+    <color name="statusBarColorNight">#0D2A1D</color> <!-- Darker status bar color for night mode -->
+
+    <!-- Other Colors -->
+    <color name="white">#FFFFFF</color> <!-- White color for consistent references -->
+    <color name="black">#000000</color> <!-- Black color for text -->
+    <color name="cardBackgroundColor">#4CAF50</color>
+    <color name="option_text_unselected">#333333</color>
+    <color name="option_text_selected">#FFFFFF</color>
+</resources>

@@ -1,0 +1,5 @@
+
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <stroke android:color="#1B4332" android:width="2dp"/> <!-- Darker green for pressed state -->
+        <corners android:radius="50dp"/>
+    </shape>

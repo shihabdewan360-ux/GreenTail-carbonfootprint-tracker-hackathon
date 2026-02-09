@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selected state - green background with subtle shadow -->
+    <item android:state_checked="true">
+        <layer-list>
+            <!-- Bottom shadow - subtle effect -->
+            <item android:top="3dp" android:left="0dp" android:right="0dp" android:bottom="0dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="8dp" />
+                    <solid android:color="#20000000" />
+                </shape>
+            </item>
+
+            <!-- Main green background -->
+            <item android:top="0dp" android:left="0dp" android:right="0dp" android:bottom="2dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="8dp" />
+                    <solid android:color="#1B4332" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <!-- Default state - white background with subtle shadow -->
+    <item>
+        <layer-list>
+            <!-- Bottom shadow - subtle effect -->
+            <item android:top="3dp" android:left="0dp" android:right="0dp" android:bottom="0dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="8dp" />
+                    <solid android:color="#10000000" />
+                </shape>
+            </item>
+
+            <!-- Main white background -->
+            <item android:top="0dp" android:left="0dp" android:right="0dp" android:bottom="2dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="8dp" />
+                    <solid android:color="#FFFFFF" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

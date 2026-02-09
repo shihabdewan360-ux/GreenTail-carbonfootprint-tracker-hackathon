@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed state - white text -->
+    <item android:state_pressed="true" android:color="@android:color/white"/>
+
+    <!-- Focused state - white text -->
+    <item android:state_focused="true" android:color="@android:color/white"/>
+
+    <!-- Default state - your primary variant color -->
+    <item android:color="@color/colorPrimaryVariant"/>
+</selector>

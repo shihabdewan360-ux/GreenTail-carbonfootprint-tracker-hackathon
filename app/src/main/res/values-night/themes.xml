@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Night Theme -->
+    <style name="Theme.Carbonfootprint" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Dark Primary Color -->
+        <item name="colorPrimary">@color/colorPrimary1Night</item> <!-- Darker Green for Night Mode -->
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariantNight</item> <!-- Even Darker Green -->
+        <item name="colorOnPrimary">@color/colorOnPrimaryNight</item> <!-- White Text on Dark Green -->
+
+        <!-- Secondary Brand Color (Teal) for Night Mode -->
+        <item name="colorSecondary">@color/colorSecondaryNight</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariantNight</item>
+        <item name="colorOnSecondary">@color/colorOnSecondaryNight</item>
+
+        <!-- Status Bar Color for Night Mode -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!-- Background Color for Night Mode -->
+        <item name="android:background">@color/backgroundColorNight</item> <!-- Dark background for Night Mode -->
+
+        <!-- Text Color for Night Mode -->
+        <item name="android:textColor">@color/textColorNight</item>
+    </style>
+</resources>
