@@ -5,7 +5,7 @@ GreenTail is an Android-based application designed to transform environmental aw
 ## Key Features
 
 * **Multi-Category Footprint Survey**: A comprehensive estimation engine that calculates your impact across four pillars using internationally recognized standards.
-* **AI Action Verification**: (Powered by Google Gemini 2.5) To ensure credibility, GreenTail utilizes the Google Gemini API to verify eco-friendly actions. 
+* **AI Action Verification**: (Powered by Google Gemini 3.0) To ensure credibility, GreenTail utilizes the Google Gemini API to verify eco-friendly actions. 
 * **Gamification & Habits**: Earn rewards and visualize progress through dynamic charts.
 * **Social Challenges**: Join teams and participate in collective goals.
 
@@ -13,7 +13,7 @@ GreenTail is an Android-based application designed to transform environmental aw
 
 * **Language**: Java
 * **Platform**: Android Studio
-* **AI Integration**: Google Gemini 2.5 API
+* **AI Integration**: Google Gemini 3.0 API
 * **Version Control**: Git & GitHub
 
 ## Getting Started
