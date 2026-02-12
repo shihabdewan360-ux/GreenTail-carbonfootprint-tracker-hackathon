@@ -6,12 +6,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,12 +21,11 @@ import java.text.DecimalFormat;
 
 public class Overall extends AppCompatActivity {
 
-    // INDUSTRY STANDARDS 2026
-    private static final double MAX_BAR_VALUE = 8.0; // Scaled higher to show impact depth
-    private static final double SAFE_BAR_TARGET = 2.5; // Paris Agreement 2030 goal per person
+    private static final double SAFE_BAR_TARGET = 2.5;
 
     private TextView homeValue, travelValue, foodValue, othersValue, overallText, overallValue, updateButton;
-    private View homeProgress, travelProgress, foodProgress, othersProgress;
+    private LottieAnimationView lottieIceberg;
+
     private double homeFootprint = 0.0;
     private double travelFootprint = 0.0;
     private double foodFootprint = 0.0;
@@ -54,28 +52,25 @@ public class Overall extends AppCompatActivity {
         overallText = findViewById(R.id.overallText);
         overallValue = findViewById(R.id.overallValue);
         updateButton = findViewById(R.id.updateButton);
+        lottieIceberg = findViewById(R.id.lottieAnimationView);
 
-        // --- FIXED ALIGNMENT PROGRAMMATICALLY ---
-        overallText.setGravity(Gravity.CENTER);
-        overallValue.setGravity(Gravity.CENTER);
+        if (overallText != null) overallText.setGravity(Gravity.CENTER);
+        if (overallValue != null) overallValue.setGravity(Gravity.CENTER);
 
-        homeProgress = findViewById(R.id.homeProgressFill);
-        travelProgress = findViewById(R.id.travelProgressFill);
-        foodProgress = findViewById(R.id.foodProgressFill);
-        othersProgress = findViewById(R.id.othersProgressFill);
+        // --- FIXED LOTTIE SETTINGS ---
+        if (lottieIceberg != null) {
+            lottieIceberg.setRepeatCount(0); // Stop looping
+            lottieIceberg.setRepeatMode(com.airbnb.lottie.LottieDrawable.RESTART);
+        }
 
         updateButton.setOnClickListener(v -> {
             String userId = mAuth.getCurrentUser() != null ? mAuth.getCurrentUser().getUid() : "anonymous";
             FirebaseDatabase.getInstance(DB_URL).getReference("users")
-                    .child(userId)
-                    .child("survey_completed")
-                    .setValue(false)
+                    .child(userId).child("survey_completed").setValue(false)
                     .addOnSuccessListener(aVoid -> {
-                        Intent intent = new Intent(Overall.this, TakeServey.class);
-                        startActivity(intent);
+                        startActivity(new Intent(Overall.this, TakeServey.class));
                         finish();
-                    })
-                    .addOnFailureListener(e -> Toast.makeText(this, "Error resetting status", Toast.LENGTH_SHORT).show());
+                    });
         });
 
         updateUI();
@@ -88,9 +83,9 @@ public class Overall extends AppCompatActivity {
     }
 
     private void fetchFootprintData() {
-        String userId = mAuth.getCurrentUser() != null ? mAuth.getCurrentUser().getUid() : "anonymous";
+        if (mAuth.getCurrentUser() == null) return;
+        String userId = mAuth.getCurrentUser().getUid();
         categoriesLoaded = 0;
-        homeFootprint = 0.0; travelFootprint = 0.0; foodFootprint = 0.0; othersFootprint = 0.0;
 
         DatabaseReference dbRef = FirebaseDatabase.getInstance(DB_URL).getReference("surveys");
         fetchCategoryData(dbRef.child("home"), userId, "home");
@@ -103,30 +98,27 @@ public class Overall extends AppCompatActivity {
         categoryRef.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                double footprint = 0.0;
                 if (snapshot.exists()) {
-                    double footprint = 0.0;
-                    if (snapshot.child("annualEmissions").exists()) {
-                        footprint = getDoubleValue(snapshot.child("annualEmissions"));
-                    } else if (snapshot.child("annualTonnes").exists()) {
-                        footprint = getDoubleValue(snapshot.child("annualTonnes"));
-                    } else if (snapshot.child("carbon_footprint").exists()) {
-                        footprint = getDoubleValue(snapshot.child("carbon_footprint"));
-                    }
-
-                    switch (categoryName) {
-                        case "home": homeFootprint = footprint; break;
-                        case "travel": travelFootprint = footprint; break;
-                        case "food": foodFootprint = footprint; break;
-                        case "others": othersFootprint = footprint; break;
-                    }
+                    if (snapshot.child("annualEmissions").exists()) footprint = getDoubleValue(snapshot.child("annualEmissions"));
+                    else if (snapshot.child("annualTonnes").exists()) footprint = getDoubleValue(snapshot.child("annualTonnes"));
+                    else if (snapshot.child("carbon_footprint").exists()) footprint = getDoubleValue(snapshot.child("carbon_footprint"));
                 }
+
+                switch (categoryName) {
+                    case "home": homeFootprint = footprint; break;
+                    case "travel": travelFootprint = footprint; break;
+                    case "food": foodFootprint = footprint; break;
+                    case "others": othersFootprint = footprint; break;
+                }
+
                 categoriesLoaded++;
                 if (categoriesLoaded >= TOTAL_CATEGORIES) {
                     updateUI();
                     updateTotalInDatabase();
                 }
             }
-            @Override public void onCancelled(@NonNull DatabaseError error) { categoriesLoaded++; }
+            @Override public void onCancelled(@NonNull DatabaseError error) {}
         });
     }
 
@@ -139,6 +131,8 @@ public class Overall extends AppCompatActivity {
     }
 
     private void updateUI() {
+        if (homeValue == null) return;
+
         homeValue.setText(formatValue(homeFootprint));
         travelValue.setText(formatValue(travelFootprint));
         foodValue.setText(formatValue(foodFootprint));
@@ -146,39 +140,39 @@ public class Overall extends AppCompatActivity {
 
         double totalTons = homeFootprint + travelFootprint + foodFootprint + othersFootprint;
 
-        // DYNAMIC COLOR FEEDBACK
-        if (totalTons <= SAFE_BAR_TARGET) {
-            overallText.setTextColor(Color.parseColor("#4CAF50")); // Green (Safe)
-        } else if (totalTons <= 5.0) {
-            overallText.setTextColor(Color.parseColor("#FBC02D")); // Yellow (Average)
-        } else {
-            overallText.setTextColor(Color.parseColor("#D32F2F")); // Red (High)
+        if (lottieIceberg != null) {
+            if (totalTons <= SAFE_BAR_TARGET) {
+                // GREEN - SAFE (Tiny)
+                overallText.setTextColor(Color.parseColor("#4CAF50"));
+                lottieIceberg.setScaleX(0.65f);
+                lottieIceberg.setScaleY(0.65f);
+            } else if (totalTons <= 5.0) {
+                // ORANGE - WARNING (Medium)
+                overallText.setTextColor(Color.parseColor("#FBC02D"));
+                lottieIceberg.setScaleX(1.0f);
+                lottieIceberg.setScaleY(1.0f);
+            } else {
+                // RED - EXTREME (Large but fits)
+                overallText.setTextColor(Color.parseColor("#D32F2F"));
+                lottieIceberg.setScaleX(1.35f);
+                lottieIceberg.setScaleY(1.35f);
+            }
+
+            lottieIceberg.setMinAndMaxProgress(0f, 1f);
+            lottieIceberg.setRepeatCount(0);
+            lottieIceberg.playAnimation();
         }
 
         overallText.setText("Total: " + formatValue(totalTons) + " Tonnes/Year");
         overallValue.setText(getImpactDescription(totalTons));
-        updateProgressBarWithDelay();
-    }
-
-    private void updateTotalInDatabase() {
-        String userId = mAuth.getCurrentUser() != null ? mAuth.getCurrentUser().getUid() : "anonymous";
-        if (!userId.equals("anonymous")) {
-            double total = homeFootprint + travelFootprint + foodFootprint + othersFootprint;
-            FirebaseDatabase.getInstance(DB_URL).getReference("users").child(userId).child("total_footprint").setValue(total);
-        }
-    }
-
-    private String formatValue(double value) {
-        return value == 0 ? "0.0" : decimalFormat.format(value);
     }
 
     private String getImpactDescription(double totalTons) {
         if (totalTons <= 0) return "Complete surveys to see your impact!";
 
-        double iceMelted = totalTons * 3.0; // 1 Tonne = 3m² melt
+        double iceMelted = totalTons * 3.0;
         String iceText;
 
-        // Visual Object Comparison
         if (iceMelted < 15) {
             int beds = (int) Math.max(1, Math.round(iceMelted / 4.0));
             iceText = String.format("This melts enough Arctic ice to cover %d King Size %s.",
@@ -189,41 +183,30 @@ public class Overall extends AppCompatActivity {
                     billboards, billboards == 1 ? "billboard" : "billboards");
         }
 
-        // Safe Bar Context (Dynamic Message)
         String safeBarText;
         if (totalTons <= SAFE_BAR_TARGET) {
             safeBarText = "\n\nGreat job! You are within the safe limit of 2.5t.";
         } else {
             double diff = totalTons / SAFE_BAR_TARGET;
-            safeBarText = String.format("\n\nYou are %.1fx above the sustainable limit (2.5t).", diff);
+            safeBarText = String.format("\nYou are %.1fx above the sustainable limit (2.5t).", diff);
         }
 
         return iceText + safeBarText;
     }
 
-    private void updateProgressBarWithDelay() {
-        homeProgress.post(() -> {
-            updateProgressBar(homeProgress, homeFootprint);
-            updateProgressBar(travelProgress, travelFootprint);
-            updateProgressBar(foodProgress, foodFootprint);
-            updateProgressBar(othersProgress, othersFootprint);
-        });
+    private void updateTotalInDatabase() {
+        if (mAuth.getCurrentUser() == null) return;
+        String userId = mAuth.getCurrentUser().getUid();
+        double total = homeFootprint + travelFootprint + foodFootprint + othersFootprint;
+        FirebaseDatabase.getInstance(DB_URL).getReference("users").child(userId).child("total_footprint").setValue(total);
     }
 
-    private void updateProgressBar(View progressBar, double tonsValue) {
-        float percentage = (tonsValue <= 0) ? 0.01f : (float) Math.min(tonsValue / MAX_BAR_VALUE, 1.0f);
-        ViewGroup parent = (ViewGroup) progressBar.getParent();
-        int parentWidth = parent.getWidth() - parent.getPaddingLeft() - parent.getPaddingRight();
-        ViewGroup.LayoutParams params = progressBar.getLayoutParams();
-        params.width = (int) (parentWidth * percentage);
-        progressBar.setLayoutParams(params);
-    }
+    private String formatValue(double value) { return decimalFormat.format(value); }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(this, Main1.class));
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         finish();
     }
 }
